@@ -4,7 +4,17 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/am_tv_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <com.share.jack.graphiclock.widget.GraphicLockView
+        android:id="@+id/am_gl_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 </RelativeLayout>
