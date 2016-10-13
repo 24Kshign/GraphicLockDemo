@@ -5,11 +5,9 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="doLogin"
-        android:text="登录"
-        android:textSize="18dp" />
+        android:text="恭喜你,登录成功!!!" />
 
 </LinearLayout>

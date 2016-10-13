@@ -18,6 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".GraphicLockActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".LuckyActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
