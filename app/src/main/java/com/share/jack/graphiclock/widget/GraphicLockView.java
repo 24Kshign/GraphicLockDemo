@@ -8,6 +8,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -210,20 +211,25 @@ public class GraphicLockView extends View {
         }
         //绘制结束
         if (isFinishMove) {
-            if (selectPointList.size() == 1) {   //绘制不成立
+            //绘制不成立
+            if (selectPointList.size() == 1) {
                 resetPoint();
-            } else if (selectPointList.size() < MIN_POINT && selectPointList.size() > 2) { //绘制错误,点不够
+                //绘制错误,点不够
+            } else if (selectPointList.size() < MIN_POINT && selectPointList.size() > 0) {
                 if (null != onGraphicLockListener) {
                     onGraphicLockListener.setPwdFailure();
                 }
                 errorPoint();
-            } else if (selectPointList.size() > 0) {  //绘制成功
+                //绘制成功
+            } else {
                 if (null != onGraphicLockListener) {
                     String strPassword = "";
                     for (Point pwdPoint : selectPointList) {
                         strPassword += pwdPoint.index;
                     }
-                    onGraphicLockListener.setPwdSuccess(strPassword.toString());
+                    if (!TextUtils.isEmpty(strPassword)) {
+                        onGraphicLockListener.setPwdSuccess(strPassword);
+                    }
                     correctPoint();
                 }
             }
