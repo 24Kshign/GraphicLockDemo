@@ -15,7 +15,7 @@ public class GraphicLockActivity extends Activity implements GraphicLockView.OnG
     private GraphicLockView mGlGraphicLockView;
     private boolean isFirstSetPwd;
     private String mPassword;   //记录第一次绘制的密码
-    private int type = 0;
+    private int type = 0;   //判断时登录还是设置密码
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
